@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Meridian — Architettura & Interior Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <div style="display:flex; align-items:center; gap:16px; min-width:0;">
+      <a href="../../index.html#progetti" class="back-pill" style="flex-shrink:0; font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--ink-dim); border:1px solid var(--line); padding:6px 12px; border-radius:100px; text-decoration:none; white-space:nowrap;">← <span class="back-label">Portfolio</span></a>
+      <div class="logo">studio <b>Meridian</b></div>
+    </div>
+    <div class="nav-links">
+      <a href="#progetti">Progetti</a>
+      <a href="#approccio">Approccio</a>
+      <a href="#studio">Studio</a>
+      <a href="#contatti">Contatti</a>
+    </div>
+    <a href="#contatti" class="nav-cta">Richiedi una consulenza</a>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Studio di architettura & interior design</div>
+      <h1>Progettiamo spazi che si <span class="draw">abitano meglio.</span></h1>
+      <p class="lead">Dallo studio di fattibilità alla direzione lavori: seguiamo ogni progetto residenziale e commerciale come se fosse l'unico in corso.</p>
+      <div class="stat-row">
+        <div class="stat"><b>12</b><span>Anni di attività</span></div>
+        <div class="stat"><b>8.400</b><span>Mq progettati</span></div>
+        <div class="stat"><b>3</b><span>Premi di settore</span></div>
+      </div>
+    </div>
+    <div class="blueprint-art">
+      <svg viewBox="0 0 320 320" fill="none">
+        <path class="draw-line" d="M40 260 L40 140 L160 60 L280 140 L280 260 Z"/>
+        <path class="draw-line d2" d="M100 260 L100 180 L150 180 L150 260 M190 260 L190 150 L240 150 L240 260"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="progetti">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="tag">Selezione lavori</div><h2>Progetti recenti</h2></div>
+      <p>Filtra per tipologia — ogni progetto è raccontato con superficie, luogo e anno di consegna.</p>
+    </div>
+    <div class="filters reveal">
+      <button class="filter-btn active" data-filter="all">Tutti</button>
+      <button class="filter-btn" data-filter="residenziale">Residenziale</button>
+      <button class="filter-btn" data-filter="commerciale">Commerciale</button>
+      <button class="filter-btn" data-filter="interni">Interni</button>
+    </div>
+    <div class="projects">
+      <div class="project show reveal" data-cat="residenziale">
+        <div class="project-visual">
+          <div class="wire"><svg viewBox="0 0 100 100"><rect x="20" y="30" width="60" height="50" stroke-width="2"/><path d="M20 30 L50 10 L80 30" stroke-width="2" fill="none"/></svg></div>
+        </div>
+        <div class="project-body"><div class="cat">Residenziale</div><h3>Villa Ca' Bianca</h3><div class="meta">Ponte San Pietro (BG) · 180 mq · 2025</div></div>
+      </div>
+      <div class="project show reveal" data-cat="commerciale">
+        <div class="project-visual">
+          <div class="wire"><svg viewBox="0 0 100 100"><rect x="15" y="20" width="70" height="60" stroke-width="2"/><line x1="15" y1="45" x2="85" y2="45" stroke-width="2"/></svg></div>
+        </div>
+        <div class="project-body"><div class="cat">Commerciale</div><h3>Showroom Lumina Arredi</h3><div class="meta">Milano · 320 mq · 2024</div></div>
+      </div>
+      <div class="project show reveal" data-cat="interni">
+        <div class="project-visual">
+          <div class="wire"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="28" stroke-width="2"/><line x1="50" y1="22" x2="50" y2="78" stroke-width="2"/></svg></div>
+        </div>
+        <div class="project-body"><div class="cat">Interni</div><h3>Attico Borgo Palazzo</h3><div class="meta">Bergamo · 95 mq · 2024</div></div>
+      </div>
+      <div class="project show reveal" data-cat="residenziale">
+        <div class="project-visual">
+          <div class="wire"><svg viewBox="0 0 100 100"><rect x="25" y="15" width="50" height="70" stroke-width="2"/><line x1="25" y1="50" x2="75" y2="50" stroke-width="2"/></svg></div>
+        </div>
+        <div class="project-body"><div class="cat">Residenziale</div><h3>Casa tra i Noci</h3><div class="meta">Almè (BG) · 210 mq · 2023</div></div>
+      </div>
+      <div class="project show reveal" data-cat="commerciale">
+        <div class="project-visual">
+          <div class="wire"><svg viewBox="0 0 100 100"><rect x="10" y="35" width="80" height="35" stroke-width="2"/><line x1="30" y1="35" x2="30" y2="70" stroke-width="2"/><line x1="70" y1="35" x2="70" y2="70" stroke-width="2"/></svg></div>
+        </div>
+        <div class="project-body"><div class="cat">Commerciale</div><h3>Uffici Vetra Group</h3><div class="meta">Milano · 540 mq · 2023</div></div>
+      </div>
+      <div class="project show reveal" data-cat="interni">
+        <div class="project-visual">
+          <div class="wire"><svg viewBox="0 0 100 100"><rect x="20" y="20" width="60" height="60" stroke-width="2"/><rect x="35" y="35" width="30" height="30" stroke-width="2"/></svg></div>
+        </div>
+        <div class="project-body"><div class="cat">Interni</div><h3>Loft Ex Cotonificio</h3><div class="meta">Bergamo · 130 mq · 2022</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="approach" id="approccio">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="tag">Come lavoriamo</div><h2>Quattro fasi, un solo referente</h2></div>
+      <p>Lo stesso team ti segue dal primo sopralluogo alla consegna delle chiavi.</p>
+    </div>
+    <div class="steps4">
+      <div class="step4 reveal"><div class="n">01</div><h4>Analisi del sito</h4><p>Rilievo, vincoli normativi e potenzialità dello spazio esistente.</p></div>
+      <div class="step4 reveal"><div class="n">02</div><h4>Concept</h4><p>Prime planimetrie e mood di riferimento, discussi insieme a te.</p></div>
+      <div class="step4 reveal"><div class="n">03</div><h4>Sviluppo esecutivo</h4><p>Tavole tecniche, computo materiali e selezione fornitori.</p></div>
+      <div class="step4 reveal"><div class="n">04</div><h4>Direzione lavori</h4><p>Sopralluoghi in cantiere fino al collaudo finale.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="studio">
+  <div class="wrap studio-grid">
+    <div class="reveal" style="text-align:center;">
+      <div class="tag">Chi siamo</div>
+      <h2 style="font-family:var(--serif); font-weight:400; font-size:2.2rem; margin:14px 0 18px;">Un team piccolo, per scelta</h2>
+      <p style="color:var(--ink-dim); max-width:46ch; margin:0 auto;">Fondato nel 2014 dall'incontro tra una formazione in architettura al Politecnico di Milano e una in interior design alla NABA, lo studio è rimasto volutamente piccolo: un unico team segue ogni progetto dal rilievo iniziale al collaudo in cantiere, senza passaggi di consegna tra referenti diversi.</p>
+    </div>
+    <div class="counters" style="text-align:center;">
+      <div class="counter reveal"><b data-count="86">0</b><span>Progetti completati</span></div>
+      <div class="counter reveal"><b data-count="12">0</b><span>Anni di esperienza</span></div>
+      <div class="counter reveal"><b data-count="8400">0</b><span>Mq progettati</span></div>
+      <div class="counter reveal"><b data-count="3">0</b><span>Premi ricevuti</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap testi-wrap">
+    <div class="tag reveal" style="margin-bottom:30px;">Cosa dicono i clienti</div>
+    <div class="testi active">
+      <p>"Lo studio ci ha seguiti dal primo sopralluogo fino alle scelte di dettaglio più piccole, senza mai farci sentire un numero tra tanti. Il risultato è andato oltre quello che avevamo immaginato."</p>
+      <div class="who">Marco Bellini — Villa Ca' Bianca</div>
+    </div>
+    <div class="testi">
+      <p>"Massima attenzione ai dettagli e rispetto assoluto dei tempi concordati: durante tutto il cantiere siamo stati aggiornati costantemente, senza mai dover rincorrere una risposta."</p>
+      <div class="who">Elena Conti — Showroom Lumina Arredi</div>
+    </div>
+    <div class="testi">
+      <p>"Il risultato finale ha superato le nostre aspettative, e la disponibilità del team durante tutto il percorso ha reso semplici anche le decisioni più difficili."</p>
+      <div class="who">Davide Riva — Attico Borgo Palazzo</div>
+    </div>
+    <div class="testi-nav">
+      <button id="prevT" aria-label="Testimonianza precedente">←</button>
+      <button id="nextT" aria-label="Testimonianza successiva">→</button>
+    </div>
+  </div>
+</section>
+
+<section id="contatti">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <div class="tag">Iniziamo a parlarne</div>
+      <h2 style="font-family:var(--serif); font-weight:400; font-size:2.2rem; margin:14px 0 18px;">Raccontaci il tuo progetto</h2>
+      <p style="color:var(--ink-dim); max-width:40ch;">Rispondiamo entro 48 ore lavorative con la disponibilità per un primo sopralluogo conoscitivo, senza impegno.</p>
+    </div>
+    <form class="reveal" id="contactForm">
+      <div class="field"><label>Nome e cognome</label><input type="text" required placeholder="Mario Rossi"></div>
+      <div class="field"><label>Email</label><input type="email" required placeholder="mario.rossi@email.com"></div>
+      <div class="field"><label>Tipo di progetto</label>
+        <select><option>Residenziale</option><option>Commerciale</option><option>Interior design</option><option>Altro</option></select>
+      </div>
+      <div class="field"><label>Raccontaci di più</label><textarea rows="4" placeholder="Es. 120 mq, Bergamo, avvio lavori entro l'estate..."></textarea></div>
+      <button type="submit" class="submit-btn">Invia richiesta</button>
+      <p class="form-note">Form dimostrativo di portfolio: nessun dato viene realmente inviato.</p>
+      <div class="success" id="successMsg">Grazie! Il messaggio è pronto — in un progetto reale partirebbe da qui verso la casella email dello studio.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Progetto portfolio di Antonio Maraschiello — concept, testi, illustrazioni e codice generati con l'ausilio dell'intelligenza artificiale, come dimostrazione di un workflow AI-assisted end-to-end.</p>
+    <div class="bottom">© 2026 Studio Meridian — Progetto portfolio, non uno studio reale</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

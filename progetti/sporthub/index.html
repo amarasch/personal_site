@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SportHub — Gestione iscrizioni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <button class="sidebar-close" id="sidebarClose" aria-label="Chiudi menu">&times;</button>
+    <div class="brand"><div class="mark">S</div><b>SportHub</b></div>
+    <a href="../../index.html#progetti" style="display:block; margin:0 10px 18px; font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--sidebar-ink); border:1px solid rgba(255,255,255,.16); padding:7px 14px; border-radius:100px; text-decoration:none; width:fit-content;">← Torna al portfolio</a>
+    <nav class="nav-group">
+      <div class="nav-label">Panoramica</div>
+      <button class="nav-item active" data-view="dashboard">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        Dashboard
+      </button>
+      <button class="nav-item" data-view="iscritti">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
+        Iscritti
+      </button>
+      <div class="nav-label">Gestione</div>
+      <button class="nav-item" data-view="abbonamenti">
+        <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>
+        Abbonamenti
+      </button>
+      <button class="nav-item" data-view="calendario">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        Calendario
+      </button>
+      <button class="nav-item" data-view="report">
+        <svg viewBox="0 0 24 24"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>
+        Report
+      </button>
+      <button class="nav-item" data-view="impostazioni">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.6-2-3.4-2.4 1a7 7 0 0 0-2-1.2L14 3h-4l-.5 2.6a7 7 0 0 0-2 1.2l-2.4-1-2 3.4 2 1.6A7 7 0 0 0 5 12c0 .4 0 .8.1 1.2l-2 1.6 2 3.4 2.4-1c.6.5 1.3.9 2 1.2L10 21h4l.5-2.6c.7-.3 1.4-.7 2-1.2l2.4 1 2-3.4-2-1.6c.1-.4.1-.8.1-1.2Z"/></svg>
+        Impostazioni
+      </button>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="ai-pill"><span class="dot"></span><span>Interamente progettato e sviluppato con Claude (AI Anthropic)</span></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <div class="search-box">
+        <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="searchInput" placeholder="Cerca un iscritto...">
+      </div>
+      <div class="top-actions">
+        <button class="icon-btn" id="themeToggle" title="Cambia tema">
+          <svg viewBox="0 0 24 24" id="themeIcon"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <div class="notif-wrap">
+          <button class="icon-btn" id="notifBtn" title="Notifiche"><span class="badge-dot" id="notifDot"></span>
+            <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+          </button>
+          <div class="notif-panel" id="notifPanel">
+            <div class="notif-panel-head">Notifiche</div>
+            <div class="notif-item"><span class="dot"></span><div><b>Martina Ricci</b> ha un rinnovo in scadenza tra 1 giorno</div></div>
+            <div class="notif-item"><span class="dot"></span><div><b>Federico Costa</b> risulta scaduto</div></div>
+            <div class="notif-item"><span class="dot"></span><div>Nuovo iscritto aggiunto: <b>Andrea Villa</b></div></div>
+          </div>
+        </div>
+        <div class="profile">
+          <div class="avatar">MR</div>
+          <div><div class="profile-name">Marco Rinaldi</div><div class="profile-role">Amministratore</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <!-- DASHBOARD VIEW -->
+      <section class="view active" id="view-dashboard">
+        <div class="page-head">
+          <div><h1>Dashboard</h1><p>Panoramica generale della società — dati aggiornati a oggi</p></div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="card stat-card">
+            <div class="stat-top"><div class="stat-icon" style="background:var(--coral-dim);"><svg style="stroke:var(--coral)" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></div><span class="delta up">+4,2%</span></div>
+            <div class="val" id="statAttivi">0</div><div class="lbl">Iscritti attivi</div>
+          </div>
+          <div class="card stat-card">
+            <div class="stat-top"><div class="stat-icon" style="background:var(--success-bg);"><svg style="stroke:var(--success)" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><span class="delta up">+8,1%</span></div>
+            <div class="val">€ 12.480</div><div class="lbl">Incassi questo mese</div>
+          </div>
+          <div class="card stat-card">
+            <div class="stat-top"><div class="stat-icon" style="background:var(--warning-bg);"><svg style="stroke:var(--warning)" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><span class="delta down">7 giorni</span></div>
+            <div class="val" id="statScadenza">0</div><div class="lbl">Rinnovi in scadenza</div>
+          </div>
+          <div class="card stat-card">
+            <div class="stat-top"><div class="stat-icon" style="background:rgba(31,138,112,.14);"><svg style="stroke:var(--teal)" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div><span class="delta up">+12</span></div>
+            <div class="val">9</div><div class="lbl">Nuovi iscritti (mese)</div>
+          </div>
+        </div>
+
+        <div class="charts-row">
+          <div class="card">
+            <div class="card-head"><h3>Andamento iscritti & incassi</h3><span class="sub">Ultimi 7 mesi · dati dimostrativi</span></div>
+            <div class="chart-wrap"><canvas id="trendChart"></canvas></div>
+          </div>
+          <div class="card">
+            <div class="card-head"><h3>Iscritti per sport</h3></div>
+            <div class="chart-wrap" style="height:180px;"><canvas id="sportChart"></canvas></div>
+            <div class="sport-legend" id="sportLegend"></div>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <div class="card-head"><h3>Rinnovi in scadenza</h3></div>
+            <div id="renewalsList"></div>
+          </div>
+          <div class="card">
+            <div class="card-head"><h3>Ultimi iscritti aggiunti</h3><span class="sub">Vista rapida</span></div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Nome</th><th>Sport</th><th>Piano</th><th>Stato</th></tr></thead>
+                <tbody id="recentTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ISCRITTI VIEW -->
+      <section class="view" id="view-iscritti">
+        <div class="page-head">
+          <div><h1>Iscritti</h1><p>Gestisci anagrafica, sport e stato degli abbonamenti</p></div>
+        </div>
+        <div class="card">
+          <div class="toolbar">
+            <input type="text" id="tableSearch" placeholder="Cerca per nome...">
+            <select id="filterSport">
+              <option value="">Tutti gli sport</option>
+              <option>Calcio</option><option>Nuoto</option><option>Pallavolo</option><option>Basket</option><option>Tennis</option>
+            </select>
+            <select id="filterStatus">
+              <option value="">Tutti gli stati</option>
+              <option value="attivo">Attivo</option><option value="scadenza">In scadenza</option><option value="scaduto">Scaduto</option>
+            </select>
+            <button class="btn-primary" id="btnNewMember">+ Nuovo iscritto</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th data-sort="nome">Nome ↕</th><th data-sort="sport">Sport ↕</th><th>Piano</th>
+                <th data-sort="scadenza">Scadenza ↕</th><th>Stato</th><th style="text-align:right;">Azioni</th>
+              </tr></thead>
+              <tbody id="membersTableBody"></tbody>
+            </table>
+          </div>
+          <div class="pagination">
+            <span id="pageInfo"></span>
+            <div class="pages" id="pageButtons"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PLACEHOLDER VIEWS -->
+      <section class="view" id="view-abbonamenti">
+        <div class="page-head"><div><h1>Abbonamenti</h1><p>Piani e listini della società</p></div></div>
+        <div class="empty-state">
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></div>
+          <h3>Sezione in arrivo</h3>
+          <p>Qui potrai creare piani mensili, trimestrali e annuali e collegarli automaticamente agli iscritti.</p>
+        </div>
+      </section>
+      <section class="view" id="view-calendario">
+        <div class="page-head"><div><h1>Calendario</h1><p>Corsi, lezioni e scadenze in un'unica vista</p></div></div>
+        <div class="empty-state">
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+          <h3>Sezione in arrivo</h3>
+          <p>La vista calendario mostrerà corsi, rinnovi e disponibilità impianti in un unico posto.</p>
+        </div>
+      </section>
+      <section class="view" id="view-report">
+        <div class="page-head"><div><h1>Report</h1><p>Esporta l'andamento della società</p></div></div>
+        <div class="empty-state">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></div>
+          <h3>Sezione in arrivo</h3>
+          <p>Report scaricabili in PDF/Excel su incassi, presenze e tassi di rinnovo.</p>
+        </div>
+      </section>
+      <section class="view" id="view-impostazioni">
+        <div class="page-head"><div><h1>Impostazioni</h1><p>Informazioni sulla società e sul progetto</p></div></div>
+        <div class="card" style="max-width:640px;">
+          <div class="card-head"><h3>Informazioni sul progetto</h3></div>
+          <p style="color:var(--ink-dim); font-size:.9rem; line-height:1.7;">
+            Questa dashboard è un progetto dimostrativo di portfolio di <strong>Antonio Maraschiello</strong>, pensato per una società sportiva locale con più sport e piani di abbonamento.
+            L'intera interfaccia — dal sistema di design ai grafici, dalla logica di filtro/ordinamento alla gestione degli iscritti — è stata
+            progettata e sviluppata con l'ausilio di <strong>Claude</strong>, l'intelligenza artificiale di Anthropic, a dimostrazione di un
+            workflow di sviluppo AI-assisted end-to-end.
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-head"><h3 id="modalTitle">Nuovo iscritto</h3><button class="modal-close" id="modalClose">&times;</button></div>
+    <form id="memberForm">
+      <div class="field" id="f-nome"><label>Nome e cognome</label><input type="text" id="inpNome"><div class="err">Inserisci nome e cognome.</div></div>
+      <div class="field-row">
+        <div class="field" id="f-sport"><label>Sport</label>
+          <select id="inpSport"><option value="">Seleziona...</option><option>Calcio</option><option>Nuoto</option><option>Pallavolo</option><option>Basket</option><option>Tennis</option></select>
+          <div class="err">Seleziona uno sport.</div>
+        </div>
+        <div class="field" id="f-piano"><label>Piano</label>
+          <select id="inpPiano"><option value="">Seleziona...</option><option>Mensile</option><option>Trimestrale</option><option>Annuale</option></select>
+          <div class="err">Seleziona un piano.</div>
+        </div>
+      </div>
+      <div class="field" id="f-scadenza"><label>Data di scadenza</label><input type="date" id="inpScadenza"><div class="err">Inserisci una data di scadenza.</div></div>
+      <div class="field"><label>Telefono (opzionale)</label><input type="text" id="inpTel" placeholder="+39 333 000 0000"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn-secondary" id="modalCancel">Annulla</button>
+        <button type="submit" class="btn-primary">Salva iscritto</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="toast-stack" id="toastStack"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

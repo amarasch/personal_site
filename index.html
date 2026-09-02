@@ -4,44 +4,94 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Antonio Maraschiello — Web Developer</title>
-<meta name="description" content="Portfolio e CV di Antonio Maraschiello, Web Developer con 5 anni di esperienza.">
+<meta name="description" id="metaDescription" data-i18n="meta-description" data-i18n-attr="content" content="Portfolio e CV di Antonio Maraschiello, Web Developer con 5 anni di esperienza.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@500;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="in-hero">
 
-<header class="editor-titlebar">
-  <nav class="tabbar">
-    <a href="#esperienza" class="tab active" data-color="amber"><span class="file-dot"></span>esperienza<span class="ext">.json</span></a>
-    <a href="#competenze" class="tab" data-color="green"><span class="file-dot"></span>competenze<span class="ext">.ts</span></a>
-    <a href="#progetti" class="tab" data-color="blue"><span class="file-dot"></span>progetti<span class="ext">/</span></a>
-    <a href="#terminale" class="tab" data-color="pink"><span class="file-dot"></span>terminale<span class="ext">.sh</span></a>
-    <a href="#contatti" class="tab" data-color="green"><span class="file-dot"></span>contatti<span class="ext">.sh</span></a>
-  </nav>
+<a href="#main" class="skip-link" data-i18n="skip-link">Salta al contenuto principale</a>
+
+<div class="contours" id="contours"></div>
+<div class="nav-scrim"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#chi-sono" class="brand">
+      <span class="l1">Antonio</span>
+      <span class="l2">MARASCHIELLO</span>
+    </a>
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle" type="button" data-i18n="lang-toggle-aria" data-i18n-attr="aria-label" aria-label="Passa alla versione inglese">
+        <svg class="flag flag-it" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
+          <defs><clipPath id="itClip"><circle cx="10" cy="10" r="10"/></clipPath></defs>
+          <g clip-path="url(#itClip)">
+            <rect x="0" y="0" width="6.67" height="20" fill="#009246"/>
+            <rect x="6.67" y="0" width="6.67" height="20" fill="#F1F2F1"/>
+            <rect x="13.34" y="0" width="6.67" height="20" fill="#CE2B37"/>
+          </g>
+        </svg>
+        <svg class="flag flag-en" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
+          <defs><clipPath id="enClip"><circle cx="10" cy="10" r="10"/></clipPath></defs>
+          <g clip-path="url(#enClip)">
+            <rect width="20" height="20" fill="#00247D"/>
+            <path d="M0 0 L20 20 M20 0 L0 20" stroke="#FFFFFF" stroke-width="4"/>
+            <path d="M0 0 L20 20 M20 0 L0 20" stroke="#CF142B" stroke-width="1.6"/>
+            <path d="M10 0 V20 M0 10 H20" stroke="#FFFFFF" stroke-width="6"/>
+            <path d="M10 0 V20 M0 10 H20" stroke="#CF142B" stroke-width="3.2"/>
+          </g>
+        </svg>
+      </button>
+      <a href="assets/cv_maraschiello_antonio.pdf" class="cv-pill" id="magnetCv" download>
+        <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        CV
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="menuOverlay" data-i18n="menu-toggle-aria" data-i18n-attr="aria-label" aria-label="Apri il menu">
+        <svg class="icon icon-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        <svg class="icon icon-close" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
 </header>
 
-<main>
+<div class="menu-overlay" id="menuOverlay">
+  <nav class="menu-links" data-i18n="menu-nav-aria" data-i18n-attr="aria-label" aria-label="Navigazione principale">
+    <a href="#esperienza" data-menu-link><span class="num">01</span><span data-i18n="menu-esperienza">Esperienza</span></a>
+    <a href="#competenze" data-menu-link><span class="num">02</span><span data-i18n="menu-competenze">Competenze</span></a>
+    <a href="#progetti" data-menu-link><span class="num">03</span><span data-i18n="menu-progetti">Progetti</span></a>
+    <a href="#approccio" data-menu-link><span class="num">04</span><span data-i18n="menu-approccio">Approccio</span></a>
+    <a href="#contatti" data-menu-link><span class="num">05</span><span data-i18n="menu-contatti">Contatti</span></a>
+  </nav>
+</div>
+
+<main id="main">
 
   <!-- ============ CHI SONO / HERO ============ -->
   <section id="chi-sono" class="hero">
-    <div class="wrap">
-      <div class="hero-code reveal">
-        <div class="code-line"><span class="num">1</span><span><span class="kw">const</span> developer = {</span></div>
-        <div class="code-line"><span class="num">2</span><span>&nbsp;&nbsp;name: <span class="str">"Antonio"</span>,</span></div>
-        <div class="code-line"><span class="num">3</span><span>&nbsp;&nbsp;role: <span class="str">"Web Developer"</span>,</span></div>
-        <div class="code-line"><span class="num">4</span><span>&nbsp;&nbsp;experience: <span class="str">"5 anni"</span>,</span></div>
-        <div class="code-line"><span class="num">5</span><span>&nbsp;&nbsp;location: <span class="str">"Trani, Puglia"</span>, <span class="cm">// disponibile al trasferimento</span></span></div>
-        <div class="code-line"><span class="num">6</span><span>}</span></div>
-      </div>
+    <div class="hero-glow" id="heroGlow"></div>
 
-      <h1 class="hero-title reveal">Ciao, sono <span class="accent">Antonio Maraschiello</span>.</h1>
-      <div class="hero-typed reveal" id="typedText" aria-live="polite"></div><span class="cursor reveal in"></span>
+    <div class="hero-kicker reveal"><span class="dot"></span> <span data-i18n="hero-kicker">Disponibile per nuove opportunità</span></div>
 
-      <div class="hero-actions reveal">
-        <a href="assets/CV.pdf" class="btn btn-solid" download>↓ Scarica CV (PDF)</a>
-        <a href="#progetti" class="btn btn-ghost">Guarda i progetti</a>
-        <a href="#contatti" class="btn btn-ghost">Contattami</a>
+    <h1 class="hero-title">
+      <span class="word serif-w" style="animation-delay:.05s" data-i18n="hero-word-1">Ciao,</span>
+      <span class="word serif-w" style="animation-delay:.1s" data-i18n="hero-word-2">sono</span>
+      <br>
+      <span class="word sans-w" style="animation-delay:.2s">Antonio</span>
+      <span class="word sans-w" style="animation-delay:.28s">Maraschiello.</span>
+    </h1>
+
+    <div class="hero-typed" id="typedText" aria-live="polite"></div><span class="cursor"></span>
+
+    <div class="hero-meta">
+      <p class="hero-role" data-i18n="hero-role">Web Developer, 5 anni di esperienza — da Trani per chiunque nel mondo. Siti corporate, e-commerce, web app custom.</p>
+      <div class="hero-actions">
+        <a href="#esperienza" class="btn btn-ghost" data-i18n="menu-esperienza">Esperienze</a>
+        <a href="#competenze" class="btn btn-ghost" data-i18n="menu-competenze">Competenze</a>
+        <a href="#progetti" class="btn btn-ghost" data-i18n="menu-progetti">Progetti</a>
+        <a href="#approccio" class="btn btn-ghost" data-i18n="menu-approccio">Approccio</a>
+        <a href="#contatti" class="btn btn-ghost" data-i18n="hero-btn-contact">Contattami</a>
       </div>
     </div>
   </section>
@@ -49,41 +99,44 @@
   <!-- ============ ESPERIENZA ============ -->
   <section id="esperienza">
     <div class="wrap">
-      <div class="gutter-label reveal"><span class="ln">01</span> esperienza.json</div>
-      <h2 class="section-title reveal">Dove ho lavorato</h2>
-      <p class="section-sub reveal">Cinque anni di sviluppo web, dal primo ruolo júnior ai progetti più recenti.</p>
+      <div class="eyebrow reveal"><span class="ln">01</span> ~/esperienza</div>
+      <h2 class="section-title reveal"><span class="serif-part" data-i18n="esp-title-serif">Dove ho</span> <span class="sans-part" data-i18n="esp-title-sans">lavorato.</span></h2>
+      <p class="section-sub reveal" data-i18n="esp-sub">Cinque anni di sviluppo web, dal primo ruolo junior ai progetti più recenti.</p>
 
-      <div class="exp-item reveal">
-        <span class="exp-brace">{</span>
-        <div class="exp-head">
-          <div><span class="exp-key">role: </span><span class="exp-role">Middle Web Developer</span></div>
-          <span class="exp-period">2021 — Presente</span>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <span class="timeline-node"></span>
+          <div class="timeline-card">
+            <div class="timeline-head">
+              <span class="timeline-role">Middle Web Developer</span>
+              <span class="timeline-period" data-i18n="exp1-period">2021 — Presente</span>
+            </div>
+            <div class="timeline-company" data-i18n="exp1-company">LOUD Agency SRL · Da Remoto</div>
+            <ul class="timeline-list">
+              <li data-i18n="exp1-li1">Responsabile della progettazione e dello sviluppo di siti corporate ed e-commerce, dal front-end all'integrazione con i sistemi di back-end, affiancando i clienti con consulenza UX/UI e garantendo interfacce intuitive, efficienti ed efficaci</li>
+              <li data-i18n="exp1-li2">Referente tecnico per lo sviluppo di web application custom, aiutando i clienti a individuare la soluzione tecnica ottimale per il progetto e assumendo piena responsabilità sull'intero ciclo di vita del progetto, garantendo il rispetto delle tempistiche concordate</li>
+              <li data-i18n="exp1-li3">Responsabile della manutenzione evolutiva dell'intero portfolio aziendale (70+ progetti), con autonomia decisionale su stabilità, sicurezza e performance, mantenendo l'infrastruttura efficiente nel tempo</li>
+              <li data-i18n="exp1-li4">Gestione diretta di landing page e DEM per i clienti, orientandoli verso la soluzione grafica e tecnica più efficace per il progetto, con attenzione alle performance di caricamento</li>
+              <li data-i18n="exp1-li5">Ideazione e sviluppo di template riutilizzabili per il settore Pharma, assumendo la responsabilità dell'intero processo produttivo e riducendo i tempi di realizzazione del 60%</li>
+            </ul>
+          </div>
         </div>
-        <div class="exp-company">LOUD Agency SRL · Da Remoto</div>
-        <ul class="exp-list">
-          <li>Realizzazione Siti Corporate & E-commerce</li>
-          <li>Sviluppo Web App Custom</li>
-          <li>Manutenzione e Aggiornamento siti web</li>
-          <li>Sviluppo iDetail per il settore Pharma</li>
-          <li>Sviluppo Landing Page</li>
-          <li>Sviluppo DEM</li>
-          <li>Sviluppo template custom per iDetail e DEM che hanno velocizzato il processo di creazione del 60%</li>
-        </ul>
-        <span class="exp-brace">}</span>
-      </div>
 
-      <div class="exp-item reveal">
-        <span class="exp-brace">{</span>
-        <div class="exp-head">
-          <div><span class="exp-key">role: </span><span class="exp-role">Backoffice</span></div>
-          <span class="exp-period">2016 - 2021</span>
+        <div class="timeline-item reveal">
+          <span class="timeline-node"></span>
+          <div class="timeline-card">
+            <div class="timeline-head">
+              <span class="timeline-role">Junior Developer</span>
+              <span class="timeline-period">09/19 – 12/19</span>
+            </div>
+            <div class="timeline-company">Plymouth (UK)</div>
+            <ul class="timeline-list">
+              <li data-i18n="exp2-li1">Co-responsabile della gestione del portfolio clienti, con supervisione diretta sulla manutenzione e l'aggiornamento dei siti web aziendali</li>
+              <li data-i18n="exp2-li2">Personalizzazione e dello sviluppo di siti web e-learning con soluzioni efficienti e funzionali</li>
+              <li data-i18n="exp2-li3">Creazione e gestione di corsi formativi online, garantendo un processo produttivo di qualità</li>
+            </ul>
+          </div>
         </div>
-        <div class="exp-company">Centro Impianti di Lettini · Trani</div>
-        <ul class="exp-list">
-          <li>Gestione completa del backoffice</li>
-          <li>Organizzazione vita aziendale</li>
-        </ul>
-        <span class="exp-brace">}</span>
       </div>
     </div>
   </section>
@@ -91,78 +144,70 @@
   <!-- ============ COMPETENZE ============ -->
   <section id="competenze">
     <div class="wrap">
-      <div class="gutter-label reveal"><span class="ln">02</span> competenze.ts</div>
-      <h2 class="section-title reveal">Con cosa lavoro</h2>
-      <p class="section-sub reveal">Stack principale e strumenti che uso quotidianamente.</p>
+      <div class="eyebrow reveal"><span class="ln">02</span> ~/competenze</div>
+      <h2 class="section-title reveal"><span class="serif-part" data-i18n="comp-title-serif">Con cosa</span> <span class="sans-part" data-i18n="comp-title-sans">lavoro.</span></h2>
+      <p class="section-sub reveal" data-i18n="comp-sub">Stack principale e strumenti che uso quotidianamente.</p>
 
-      <div class="ts-block reveal">
-        <div class="ts-head"><span class="kw">interface</span> <span class="type">Skills</span> {</div>
-        <div class="skills-grid">
-          <div class="skill-group">
-            <span class="label">linguaggi:</span>
-            <div class="pill-row">
-              <span class="pill">JavaScript (ES6+)</span><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">SCSS</span><a href="#contatti" class="pill pill-link">[altro]</a>
-            </div>
-          </div>
-          <div class="skill-group">
-            <span class="label">piattaforme:</span>
-            <div class="pill-row">
-              <span class="pill">WordPress</span><span class="pill">WooCommerce</span><span class="pill">Shopify</span><a href="#contatti" class="pill pill-link">[altro]</a>
-            </div>
-          </div>
-          <div class="skill-group">
-            <span class="label">design:</span>
-            <div class="pill-row">
-              <span class="pill">Photoshop</span><span class="pill">Figma</span><span class="pill">Adobe XD</span><a href="#contatti" class="pill pill-link">[altro]</a>
-            </div>
-          </div>
-          <div class="skill-group">
-            <span class="label">strumenti:</span>
-            <div class="pill-row">
-              <span class="pill">Git / GitHub</span><span class="pill">Gulp</span><span class="pill">Bitbucket</span><span class="pill">VS Code</span><a href="#contatti" class="pill pill-link">[altro]</a>
-            </div>
-          </div>
-          <div class="skill-group">
-            <span class="label">lingue:</span>
-            <div class="pill-row">
-              <span class="pill">Italiano — madrelingua</span><span class="pill">Inglese — B2</span>
-            </div>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <span class="cat-icon">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="8 6 3 12 8 18"/><polyline points="16 6 21 12 16 18"/></svg>
+          </span>
+          <span class="label" data-i18n="skill-label-1">Linguaggi</span>
+          <div class="pill-row">
+            <span class="pill">JavaScript (ES6+)</span><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">SCSS</span><a href="#contatti" class="pill pill-link" data-i18n="pill-more">[altro]</a>
           </div>
         </div>
-        <div class="ts-head" style="border-top:1px solid var(--line); border-bottom:none;">}</div>
-      </div>
-
-      <div class="soft-card reveal">
-        <h4>Come sono abituato a lavorare</h4>
-        <div class="soft-steps">
-          <div class="soft-step">
-            <span class="soft-num">01</span>
-            <h5>Osservo</h5>
-            <p>Ascolto il cliente o il team, analizzo il contesto e capisco davvero il problema prima di scrivere una riga di codice.</p>
+        <div class="skill-card reveal">
+          <span class="cat-icon">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 9l10 6 10-6-10-6z"/><path d="M2 15l10 6 10-6"/></svg>
+          </span>
+          <span class="label" data-i18n="skill-label-2">Piattaforme</span>
+          <div class="pill-row">
+            <span class="pill">WordPress</span><span class="pill">WooCommerce</span><span class="pill">Shopify</span><a href="#contatti" class="pill pill-link" data-i18n="pill-more">[altro]</a>
           </div>
-          <div class="soft-step">
-            <span class="soft-num">02</span>
-            <h5>Deduco</h5>
-            <p>Analizzo a fondo il contesto, individuo la causa reale del problema e definisco la strada più solida per risolverlo — non solo la più veloce.</p>
+        </div>
+        <div class="skill-card reveal">
+          <span class="cat-icon">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </span>
+          <span class="label" data-i18n="skill-label-3">Design</span>
+          <div class="pill-row">
+            <span class="pill">Photoshop</span><span class="pill">Figma</span><span class="pill">Adobe XD</span><a href="#contatti" class="pill pill-link" data-i18n="pill-more">[altro]</a>
           </div>
-          <div class="soft-step">
-            <span class="soft-num">03</span>
-            <h5>Agisco</h5>
-            <p>Implemento, testo e consegno nei tempi previsti, mantenendo una comunicazione chiara lungo tutto il percorso.</p>
+        </div>
+        <div class="skill-card reveal">
+          <span class="cat-icon">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </span>
+          <span class="label" data-i18n="skill-label-4">Strumenti</span>
+          <div class="pill-row">
+            <span class="pill">Git / GitHub</span><span class="pill">Gulp</span><span class="pill">Bitbucket</span><span class="pill">VS Code</span><a href="#contatti" class="pill pill-link" data-i18n="pill-more">[altro]</a>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <span class="cat-icon">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </span>
+          <span class="label" data-i18n="skill-label-5">Lingue</span>
+          <div class="pill-row">
+            <span class="pill" data-i18n="lang-it-pill">Italiano — madrelingua</span><span class="pill" data-i18n="lang-en-pill">Inglese — B2 (certificato Cambridge)</span>
           </div>
         </div>
       </div>
 
       <div class="mini-cols">
         <div class="mini-card reveal">
-          <h4>Istruzione</h4>
-          <div class="mini-row"><span class="k">Diploma di Perito informatico</span><span class="v">2019</span></div>
+          <h4 data-i18n="edu-title">Istruzione</h4>
+          <div class="mini-row"><span class="k" data-i18n="edu-diploma">Diploma di Perito informatico</span><span class="v">2019</span></div>
           <div class="mini-row"><span class="k">IISS A.Moro, Trani</span><span class="v">—</span></div>
         </div>
         <div class="mini-card reveal">
-          <h4>Altro su di me:</h4>
-          <div class="mini-row"><span class="k">Membro attivo Agesci dal 2008</span></div>
-          <div class="mini-row"><span class="k">Patente B</span></div>
+          <h4 data-i18n="about-title">Altro su di me:</h4>
+          <div class="mini-row"><span class="k" data-i18n="about-1">Membro attivo Agesci dal 2008 e da 5 anni responsabile di 30 bambini</span></div>
+          <div class="mini-row"><span class="k" data-i18n="about-2">Patente B, automunito</span></div>
+          <div class="mini-row"><span class="k" data-i18n="about-3">Hobby: Mondo tech, Escursionismo, Tennis, Videogiochi</span></div>
+
         </div>
       </div>
     </div>
@@ -171,80 +216,104 @@
   <!-- ============ PROGETTI ============ -->
   <section id="progetti">
     <div class="wrap">
-      <div class="gutter-label reveal"><span class="ln">03</span> progetti/</div>
-      <h2 class="section-title reveal">Cosa ho costruito</h2>
-      <p class="section-sub reveal">Tre progetti dimostrativi con complessità crescente — anteprima live, non screenshot statici.</p>
+      <div class="eyebrow reveal"><span class="ln">03</span> ~/progetti</div>
+      <h2 class="section-title reveal"><span class="serif-part" data-i18n="proj-title-serif">Cosa ho</span> <span class="sans-part" data-i18n="proj-title-sans">costruito.</span></h2>
+      <p class="section-sub reveal" data-i18n="proj-sub">Tre progetti dimostrativi con complessità crescente</p>
 
-      <div class="projects-grid">
-        <div class="project-card reveal">
-          <div class="preview-frame">
-            <div class="frame-bar"><span></span><span></span><span></span></div>
-            <iframe src="progetti/cascara/index.html" title="Anteprima Cascara" loading="lazy"></iframe>
-          </div>
-          <div class="project-body">
-            <div class="cat">Vetrina · Bassa complessità</div>
-            <h3>Cascara</h3>
-            <p>Sito vetrina per una micro-torrefazione di caffè: storytelling di prodotto, tasting notes, guida all'estrazione.</p>
-            <div class="project-tags"><span>HTML/CSS</span><span>JS vanilla</span><span>Animazioni SVG</span></div>
-            <div class="project-links">
-              <a href="progetti/cascara/index.html" target="_blank">Apri live ↗</a>
-            </div>
-          </div>
+      <div class="project-row reveal">
+        <div class="project-media">
+          <a class="project-frame" href="progetti/cascara/index.html" target="_blank" rel="noopener">
+            <iframe src="progetti/cascara/index.html" title="Anteprima Cascara" data-i18n="proj1-iframe-title" data-i18n-attr="title" loading="lazy" tabindex="-1"></iframe>
+          </a>
+          <span class="project-bignum">01</span>
         </div>
-
-        <div class="project-card reveal">
-          <div class="preview-frame">
-            <div class="frame-bar"><span></span><span></span><span></span></div>
-            <iframe src="progetti/meridian/index.html" title="Anteprima Studio Meridian" loading="lazy"></iframe>
-          </div>
-          <div class="project-body">
-            <div class="cat">Vetrina · Media complessità</div>
-            <h3>Studio Meridian</h3>
-            <p>Sito per uno studio di architettura: portfolio progetti filtrabile, contatori animati, form di contatto.</p>
-            <div class="project-tags"><span>JS vanilla</span><span>Filtri dinamici</span><span>Animazioni scroll</span></div>
-            <div class="project-links">
-              <a href="progetti/meridian/index.html" target="_blank">Apri live ↗</a>
-            </div>
-          </div>
+        <div class="project-info">
+          <span class="project-cap" data-i18n="proj1-cap">Vetrina · Bassa complessità</span>
+          <h3 class="project-name">Cascara</h3>
+          <p class="project-desc" data-i18n="proj1-desc">Vetrina per una micro-torrefazione: racconta l'origine dei chicchi, le note di degustazione e la guida all'estrazione, con animazioni SVG che accompagnano la lettura.</p>
+          <div class="project-tags"><span data-i18n="proj1-tag1">HTML/CSS</span><span data-i18n="tag-vanilla-js">JS vanilla</span><span data-i18n="proj1-tag3">Animazioni SVG</span></div>
+          <a class="project-link" href="progetti/cascara/index.html" target="_blank" rel="noopener">
+            <span data-i18n="proj-open">Apri il progetto</span>
+            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
         </div>
+      </div>
 
-        <div class="project-card reveal">
-          <div class="preview-frame">
-            <div class="frame-bar"><span></span><span></span><span></span></div>
-            <iframe src="progetti/sporthub/index.html" title="Anteprima SportHub" loading="lazy"></iframe>
-          </div>
-          <div class="project-body">
-            <div class="cat">Dashboard · Alta complessità</div>
-            <h3>SportHub</h3>
-            <p>Gestionale iscrizioni per una società sportiva multi-sport: grafici, tabella con filtri, modale, tema chiaro/scuro.</p>
-            <div class="project-tags"><span>Chart.js</span><span>CRUD in-memory</span><span>UI dashboard</span></div>
-            <div class="project-links">
-              <a href="progetti/sporthub/index.html" target="_blank">Apri live ↗</a>
-            </div>
-          </div>
+      <div class="project-row reveal">
+        <div class="project-media">
+          <a class="project-frame" href="progetti/meridian/index.html" target="_blank" rel="noopener">
+            <iframe src="progetti/meridian/index.html" title="Anteprima Studio Meridian" data-i18n="proj2-iframe-title" data-i18n-attr="title" loading="lazy" tabindex="-1"></iframe>
+          </a>
+          <span class="project-bignum">02</span>
+        </div>
+        <div class="project-info">
+          <span class="project-cap" data-i18n="proj2-cap">Vetrina · Media complessità</span>
+          <h3 class="project-name">Studio Meridian</h3>
+          <p class="project-desc" data-i18n="proj2-desc">Sito per uno studio di architettura: portfolio progetti filtrabile per categoria, contatori animati, carosello di testimonianze e form di contatto — tutto in JS vanilla.</p>
+          <div class="project-tags"><span data-i18n="tag-vanilla-js">JS vanilla</span><span data-i18n="proj2-tag2">Filtri dinamici</span><span data-i18n="proj2-tag3">Animazioni scroll</span></div>
+          <a class="project-link" href="progetti/meridian/index.html" target="_blank" rel="noopener">
+            <span data-i18n="proj-open">Apri il progetto</span>
+            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="project-row reveal">
+        <div class="project-media">
+          <a class="project-frame" href="progetti/sporthub/index.html" target="_blank" rel="noopener">
+            <iframe src="progetti/sporthub/index.html" title="Anteprima SportHub" data-i18n="proj3-iframe-title" data-i18n-attr="title" loading="lazy" tabindex="-1"></iframe>
+          </a>
+          <span class="project-bignum">03</span>
+        </div>
+        <div class="project-info">
+          <span class="project-cap" data-i18n="proj3-cap">Dashboard · Alta complessità</span>
+          <h3 class="project-name">SportHub</h3>
+          <p class="project-desc" data-i18n="proj3-desc">Gestionale iscrizioni per una società sportiva multi-sport: tracciamento scadenze e rinnovi, tabella iscritti filtrabile, ordinabile e paginata, grafici, CRUD in modale e tema chiaro/scuro.</p>
+          <div class="project-tags"><span>Chart.js</span><span data-i18n="proj3-tag2">CRUD in-memory</span><span data-i18n="proj3-tag3">UI dashboard</span></div>
+          <a class="project-link" href="progetti/sporthub/index.html" target="_blank" rel="noopener">
+            <span data-i18n="proj-open">Apri il progetto</span>
+            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ TERMINALE INTERATTIVO ============ -->
-  <section id="terminale">
+  <!-- ============ APPROCCIO ============ -->
+  <section id="approccio">
     <div class="wrap">
-      <div class="gutter-label reveal"><span class="ln">04</span> terminale.sh</div>
-      <h2 class="section-title reveal">Prova a chiedermi qualcosa</h2>
-      <p class="section-sub reveal">Un terminale vero, non uno screenshot: digita un comando o scrivi <b style="color:var(--amber)">help</b> per iniziare.</p>
+      <div class="eyebrow reveal"><span class="ln">04</span> ~/approccio</div>
+      <h2 class="section-title reveal"><span class="serif-part" data-i18n="appr-title-serif">Il mio</span> <span class="sans-part" data-i18n="appr-title-sans">approccio.</span></h2>
+      <p class="section-sub reveal" data-i18n="appr-sub">Non solo cosa consegno, ma come ci arrivo.</p>
 
-      <div class="term-window reveal">
-        <div class="term-bar">
-          <span class="term-dot r"></span><span class="term-dot y"></span><span class="term-dot g"></span>
-          <span class="term-title">visitor@antonio-maraschiello: ~</span>
+      <div class="manifesto">
+        <div class="manifesto-item reveal">
+          <span class="manifesto-num">01</span>
+          <div>
+            <p class="manifesto-statement"><span class="sans-part" data-i18n="appr-word-1">Osservo.</span></p>
+            <p class="manifesto-support" data-i18n="appr-support-1">Analizzo contesto, requisiti e vincoli del progetto prima di proporre qualsiasi soluzione, per non perdere di vista il quadro d'insieme.</p>
+          </div>
         </div>
-        <div class="term-body" id="termBody">
-          <div class="term-line"><span class="term-out">Digita <b>help</b> per vedere i comandi disponibili.</span></div>
+        <div class="manifesto-item reveal">
+          <span class="manifesto-num">02</span>
+          <div>
+            <p class="manifesto-statement"><span class="sans-part" data-i18n="appr-word-2">Deduco.</span></p>
+            <p class="manifesto-support" data-i18n="appr-support-2">Individuo cause e priorità, valutando le alternative tecniche in base a impatto, tempi e sostenibilità nel tempo.</p>
+          </div>
         </div>
-        <div class="term-inputline">
-          <span class="term-prompt">visitor@antonio:~$</span>
-          <input type="text" id="termInput" class="term-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminale comandi">
+        <div class="manifesto-item reveal">
+          <span class="manifesto-num">03</span>
+          <div>
+            <p class="manifesto-statement"><span class="sans-part" data-i18n="appr-word-3">Condivido.</span></p>
+            <p class="manifesto-support" data-i18n="appr-support-3">Confronto la soluzione individuata con il team, raccogliendo feedback per validarne la solidità prima di procedere a condividerla con il cliente.</p>
+          </div>
+        </div>
+        <div class="manifesto-item reveal">
+          <span class="manifesto-num">04</span>
+          <div>
+            <p class="manifesto-statement"><span class="sans-part" data-i18n="appr-word-4">Agisco.</span></p>
+            <p class="manifesto-support" data-i18n="appr-support-4">Implementazione della miglior soluzione, monitorando i risultati fino al rilascio.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -253,62 +322,87 @@
   <!-- ============ CONTATTI ============ -->
   <section id="contatti">
     <div class="wrap">
-      <div class="gutter-label reveal"><span class="ln">05</span> contatti.sh</div>
-      <h2 class="section-title reveal">Parliamone</h2>
-      <p class="section-sub reveal">Rispondo sempre entro 24-48 ore.</p>
+      <div class="eyebrow reveal"><span class="ln">05</span> ~/contatti</div>
+      <h2 class="section-title reveal"><span class="sans-part" data-i18n="contact-title">Parliamone.</span></h2>
+      <p class="section-sub reveal" data-i18n="contact-sub">Rispondo sempre entro 24-48 ore.</p>
 
-      <div class="contact-grid">
-        <button class="contact-card reveal" data-copy="antoniomarasch200@libero.it">
-          <span class="k">$ echo $EMAIL</span>
+      <div class="contact-primary reveal">
+        <div class="contact-primary-info">
+          <span class="k" data-i18n="contact-email-label">Email</span>
           <span class="v">antoniomarasch200@libero.it</span>
-          <span class="copy-hint">click per copiare</span>
-        </button>
-        <a class="contact-card reveal" href="https://www.linkedin.com/in/a-marasch" target="_blank">
-          <span class="k">$ open linkedin</span>
-          <span class="v">www.linkedin.com/in/a-marasch</span>
+        </div>
+        <div class="contact-primary-actions">
+          <button class="btn btn-ghost btn-sm" data-copy="antoniomarasch200@libero.it">
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            <span data-i18n="btn-copy">Copia</span>
+          </button>
+          <a class="btn btn-solid btn-sm" href="mailto:antoniomarasch200@libero.it">
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span data-i18n="btn-write">Scrivi</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-chips reveal">
+        <a class="contact-chip" href="https://www.linkedin.com/in/a-marasch" target="_blank" rel="noopener">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 11-.001-4.124 2.062 2.062 0 010 4.124zM7.119 20.452H3.554V9h3.565v11.452z"/></svg>
+          LinkedIn
         </a>
-        <a class="contact-card reveal" href="https://github.com/amarasch" target="_blank">
-          <span class="k">$ open github</span>
-          <span class="v">https://github.com/amarasch/</span>
+        <a class="contact-chip" href="https://github.com/amarasch" target="_blank" rel="noopener">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.333-1.754-1.333-1.754-1.089-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          GitHub
         </a>
-        <button class="contact-card reveal" data-copy="+39 340 726 5193">
-          <span class="k">$ echo $PHONE</span>
-          <span class="v">+39 340 726 5193</span>
-          <span class="copy-hint">click per copiare</span>
+        <button class="contact-chip" data-copy="+39 340 726 5193">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +39 340 726 5193
         </button>
       </div>
 
-      <div class="hero-actions reveal" style="margin-top:34px;">
-        <a href="assets/CV.pdf" class="btn btn-solid" download>↓ Scarica CV (PDF)</a>
-        <a href="mailto:antoniomarasch200@libero.it" class="btn btn-ghost">Scrivimi una email</a>
+      <div class="hero-actions reveal" style="margin-top:28px;">
+        <a href="assets/cv_maraschiello_antonio.pdf" class="btn btn-solid" download>
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="btn-download-cv">Scarica CV</span>
+        </a>
       </div>
     </div>
   </section>
 
 </main>
 
-<div class="toast-stack" id="toastStack"></div>
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-quote" data-i18n="footer-quote"><b>Curioso</b> per natura <b>Pratico</b> per scelta.</p>
+    <p class="footer-copy">© 2026 Antonio Maraschiello</p>
+  </div>
+</footer>
 
-<button class="back-to-top" id="backToTop" aria-label="Torna in cima">↑</button>
+<div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+<button class="back-to-top" id="backToTop" data-i18n="back-to-top-aria" data-i18n-attr="aria-label" aria-label="Torna in cima">
+  <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
 
 <div class="modal-overlay" id="welcomeOverlay">
   <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
     <div class="modal-bar">
       <span>welcome.txt</span>
-      <button class="modal-close" id="welcomeClose" aria-label="Chiudi">×</button>
+      <button class="modal-close" id="welcomeClose" data-i18n="modal-close-aria" data-i18n-attr="aria-label" aria-label="Chiudi">
+        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
     </div>
     <div class="modal-body">
-      <p id="welcomeTitle">Ciao! 👋</p>
-      <p>Se sei capitato su questo sito vuol dire che hai letto il mio CV e qualcosa ti ha incuriosito, quindi per prima cosa grazie!</p>
-      <p>Sì, prima che te lo stessi chiedendo: questo sito personale e i progetti che sono al suo interno sono realizzati con AI (Claude Pro nello specifico), ma non perché io non sia in grado di realizzare un progetto simile — anzi, al contrario. Penso che l'utilizzo dell'AI sia di grande vantaggio per noi sviluppatori e che ci aiuti a risparmiare tempo e a ottimizzare il nostro lavoro. Perchè alla fine La parte noiosa la fa l’IA. La parte che conta, quella, è ancora nostra.</p>
-      <p>Detto questo, enjoy!</p>
+      <p id="welcomeTitle" data-i18n="modal-title">Ciao! 👋</p>
+      <p data-i18n="modal-p1">Se sei capitato su questo sito vuol dire che hai letto il mio CV e qualcosa ti ha incuriosito, quindi per prima cosa grazie!</p>
+      <p data-i18n="modal-p2">Sì, prima che te lo stessi chiedendo: questo sito personale e i progetti che sono al suo interno sono realizzati con AI (Claude Pro nello specifico), ma non perché io non sia in grado di realizzare un progetto simile — anzi, al contrario. Penso che l'utilizzo dell'AI sia di grande vantaggio per noi sviluppatori e che ci aiuti a risparmiare tempo e a ottimizzare il nostro lavoro. Perchè alla fine La parte noiosa la fa l'IA. La parte che conta, quella, è ancora nostra.</p>
+      <p data-i18n="modal-p3">Detto questo, enjoy!</p>
     </div>
     <div class="modal-footer">
-      <button class="btn btn-solid" id="welcomeOk">Ho capito, continua</button>
+      <button class="btn btn-solid" id="welcomeOk" data-i18n="modal-ok">Ho capito, continua</button>
     </div>
   </div>
 </div>
 
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

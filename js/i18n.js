@@ -5,16 +5,17 @@
   const en = {
     'meta-description': 'Portfolio and CV of Antonio Maraschiello, Web Developer with 5 years of experience.',
     'skip-link': 'Skip to main content',
-    'lang-toggle-aria': 'Switch to Italian',
     'menu-toggle-aria': 'Open menu',
     'menu-nav-aria': 'Main navigation',
     'menu-esperienza': 'Experience',
     'menu-competenze': 'Skills',
     'menu-progetti': 'Projects',
     'menu-approccio': 'Approach',
+    'menu-hobby': 'Hobbies',
     'menu-contatti': 'Contact',
 
-    'hero-kicker': 'Available for new opportunities',
+    'hero-statement': '<b>Curious</b> by nature. <b>Practical</b> by choice.',
+    'hero-kicker': 'Open to new projects',
     'hero-word-1': 'Hi,',
     'hero-word-2': "I'm",
     'hero-role': 'Web Developer, 5 years of experience — from Trani, for anyone in the world. Corporate sites, e-commerce, custom web apps.',
@@ -50,7 +51,6 @@
     'about-title': 'More about me:',
     'about-1': 'Active Agesci (Italian Scouting) member since 2008, and for the past 5 years leader of a group of 30 kids',
     'about-2': "Full driving licence, own car",
-    'about-3': 'Hobbies: Tech, Hiking, Tennis, Video games',
 
     'proj-title-serif': "What I've",
     'proj-title-sans': 'built.',
@@ -85,6 +85,18 @@
     'appr-word-4': 'Act.',
     'appr-support-4': 'I implement the best solution, monitoring results all the way through to release.',
 
+    'hobby-title-serif': 'Outside of',
+    'hobby-title-sans': 'work.',
+    'hobby-sub': 'What I do when I step away from the keyboard.',
+    'hobby-1-name': 'Tech',
+    'hobby-1-desc': "I try out new tools and languages outside of work hours, just to understand how they tick.",
+    'hobby-2-name': 'Hiking',
+    'hobby-2-desc': 'In the mountains, when I need to unplug and reset.',
+    'hobby-3-name': 'Tennis',
+    'hobby-3-desc': "A mix of coordination and mental focus. It helps me reset and start fresh.",
+    'hobby-4-name': 'Video games',
+    'hobby-4-desc': 'Stories, challenges, mechanics — another form of design worth studying.',
+
     'contact-title': "Let's talk.",
     'contact-sub': 'I always reply within 24-48 hours.',
     'contact-email-label': 'Email',
@@ -92,15 +104,14 @@
     'btn-write': 'Write',
     'btn-download-cv': 'Download CV',
 
-    'footer-quote': '<b>Curious</b> by nature. <b>Practical</b> by choice.',
     'back-to-top-aria': 'Back to top',
 
     'modal-close-aria': 'Close',
-    'modal-title': 'Hi! 👋',
-    'modal-p1': "If you've landed on this site, it means you've read my CV and something caught your interest — so first of all, thank you!",
-    'modal-p2': "Yes, before you ask: this personal site and the projects inside it were built with AI (Claude Pro, specifically), not because I'm not capable of building something like this myself — quite the opposite. I think AI is a huge advantage for us developers, helping us save time and work more efficiently. Because in the end, the AI does the boring part. The part that matters is still ours.",
-    'modal-p3': "That said, enjoy!",
-    'modal-ok': 'Got it, continue',
+    'modal-title': 'Hey, welcome 👋',
+    'modal-p1': "If you're here, my CV did its job — thanks for stopping to take a closer look.",
+    'modal-p2': "One thing before you dive in: this site and the projects inside it were built with AI (Claude, specifically) — not because I can't do it myself, but because it's the right tool to work better and faster. The AI handles the boring part. The part that matters is still mine.",
+    'modal-p3': "Alright then — go explore.",
+    'modal-ok': "Let's go",
   };
 
   const translations = { en };
@@ -136,8 +147,9 @@
       }
     });
 
-    const toggle = document.getElementById('langToggle');
-    if (toggle) toggle.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.setAttribute('aria-pressed', btn.getAttribute('data-lang') === lang ? 'true' : 'false');
+    });
 
     storeLang(lang);
     document.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
@@ -147,13 +159,12 @@
     const initial = getStoredLang() === 'en' ? 'en' : 'it';
     if (initial === 'en') applyLanguage('en');
 
-    const toggle = document.getElementById('langToggle');
-    if (toggle) {
-      toggle.addEventListener('click', () => {
-        const next = document.documentElement.lang === 'en' ? 'it' : 'en';
-        applyLanguage(next);
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-lang');
+        if (lang !== document.documentElement.lang) applyLanguage(lang);
       });
-    }
+    });
   });
 
   window.i18nTypedLines = {

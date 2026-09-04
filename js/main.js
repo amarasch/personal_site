@@ -1,18 +1,5 @@
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// ============ CONTOUR BACKGROUND ============
-const contours = document.getElementById('contours');
-if (contours) {
-  contours.innerHTML = `<svg viewBox="0 0 1440 3000" preserveAspectRatio="xMidYMin slice">
-    <path d="M-50,180 C200,80 400,260 650,150 S1000,40 1250,180 S1500,320 1490,180" />
-    <path d="M-80,420 C150,340 380,520 600,400 S950,280 1200,440 S1480,560 1520,420" />
-    <path d="M-60,900 C220,780 460,980 700,860 S1050,700 1300,900 S1500,1020 1520,900" />
-    <path d="M-50,1500 C240,1380 480,1600 720,1460 S1080,1300 1320,1480 S1500,1600 1520,1500" />
-    <path d="M-60,2100 C230,2000 470,2200 710,2060 S1070,1900 1310,2080 S1500,2200 1520,2100" />
-    <path d="M-60,2700 C230,2600 470,2800 710,2660 S1070,2500 1310,2680 S1500,2800 1520,2700" />
-  </svg>`;
-}
-
 // ============ WORLD FLIP (cream hero -> olive rest) ============
 const heroSection = document.getElementById('chi-sono');
 if (heroSection) {

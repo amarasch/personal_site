@@ -46,7 +46,7 @@
 
 /* ---------- reset ---------- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
 body {
   background: var(--olive);
   color: var(--ink);
@@ -54,6 +54,8 @@ body {
   line-height: 1.6;
   font-size: 16px;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 a, button { color: inherit; }
 a { text-decoration: none; }
@@ -357,6 +359,7 @@ section { padding: 9vh 0; }
   box-shadow: var(--shadow-lg);
 }
 .back-to-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+body.menu-open .back-to-top { opacity: 0; pointer-events: none; transform: translateY(10px); }
 .back-to-top:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ---------- modal ---------- */
@@ -396,11 +399,14 @@ section { padding: 9vh 0; }
 }
 
 @media (max-width: 760px) {
+  .hero { justify-content: flex-start; padding-top: 120px; min-height: 100dvh; }
   .hero-title { text-align: left; margin-left: 0; max-width: 100%; }
   .hero-typed { text-align: left; }
   .hero-meta { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .hero .hero-actions { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; width: 100%; }
+  .hero .hero-actions .btn { justify-content: center; text-align: center; }
   .manifesto-item { gap: 20px; }
-  .hero-statement { position: static; width: auto; max-width: 100%; margin: 0 0 22px; text-align: left; font-size: clamp(1.3rem, 5.5vw, 1.7rem); }
+  .hero-statement { position: static; width: auto; max-width: 100%; margin: 0 0 28px; text-align: left; font-size: clamp(1.6rem, 7.5vw, 2.2rem); line-height: 1.22; }
 }
 
 @media (max-width: 640px) {

@@ -47,13 +47,12 @@
     'lang-it-pill': 'Italian — native',
     'lang-en-pill': 'English — B2 (Cambridge certified)',
     'edu-title': 'Education',
-    'edu-diploma': 'IT Technical Diploma',
+    'edu-diploma': 'IT Technical Diploma — IISS A.Moro, Trani',
     'about-title': 'More about me:',
-    'about-1': 'Active Agesci (Italian Scouting) member since 2008, and for the past 5 years leader of a group of 30 kids',
     'about-2': "Full driving licence, own car",
 
     'proj-title-serif': "What I've",
-    'proj-title-sans': 'built.',
+    'proj-title-sans': 'developed.',
     'proj-sub': 'Three demo projects of increasing complexity',
     'proj1-iframe-title': 'Cascara preview',
     'proj1-cap': 'Showcase · Low complexity',
@@ -96,6 +95,8 @@
     'hobby-3-desc': "A mix of coordination and mental focus. It helps me reset and start fresh.",
     'hobby-4-name': 'Video games',
     'hobby-4-desc': 'Stories, challenges, mechanics — another form of design worth studying.',
+    'hobby-5-name': 'Scouting',
+    'hobby-5-desc': "Active in Agesci since 2008, for the past five years leading a group of 30 kids. It's taught me to build lasting relationships and never back down from complex situations",
 
     'contact-title': "Let's talk.",
     'contact-sub': 'I always reply within 24-48 hours.',
@@ -107,7 +108,7 @@
     'back-to-top-aria': 'Back to top',
 
     'modal-close-aria': 'Close',
-    'modal-title': 'Hey, welcome 👋',
+    'modal-title': '<span class="serif-part">Hey,</span> welcome 👋',
     'modal-p1': "If you're here, my CV did its job — thanks for stopping to take a closer look.",
     'modal-p2': "One thing before you dive in: this site and the projects inside it were built with AI (Claude, specifically) — not because I can't do it myself, but because it's the right tool to work better and faster. The AI handles the boring part. The part that matters is still mine.",
     'modal-p3': "Alright then — go explore.",
@@ -149,6 +150,12 @@
 
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.setAttribute('aria-pressed', btn.getAttribute('data-lang') === lang ? 'true' : 'false');
+    });
+
+    document.querySelectorAll('[data-cv]').forEach(a => {
+      const file = lang === 'en' ? 'cv_maraschiello_antonio_en.pdf' : 'cv_maraschiello_antonio.pdf';
+      a.setAttribute('href', 'assets/' + file);
+      a.setAttribute('download', file);
     });
 
     storeLang(lang);

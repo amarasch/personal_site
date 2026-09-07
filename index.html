@@ -448,14 +448,43 @@
 
 <div class="modal-overlay" id="welcomeOverlay">
   <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+    <div class="modal-glow" aria-hidden="true"></div>
     <div class="modal-bar">
-      <span>welcome.txt</span>
-      <button class="modal-close" id="welcomeClose" data-i18n="modal-close-aria" data-i18n-attr="aria-label" aria-label="Chiudi">
-        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
+      <div class="modal-bar-left">
+        <span class="modal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      </div>
+      <div class="modal-bar-right">
+        <div class="lang-switch lang-switch-modal" role="group" aria-label="Lingua del sito">
+          <button class="lang-btn" type="button" data-lang="it" aria-pressed="true" aria-label="Italiano">
+            <svg class="flag" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
+              <defs><clipPath id="itClipModal"><circle cx="10" cy="10" r="10"/></clipPath></defs>
+              <g clip-path="url(#itClipModal)">
+                <rect x="0" y="0" width="6.67" height="20" fill="#009246"/>
+                <rect x="6.67" y="0" width="6.67" height="20" fill="#F1F2F1"/>
+                <rect x="13.34" y="0" width="6.67" height="20" fill="#CE2B37"/>
+              </g>
+            </svg>
+          </button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" aria-label="English">
+            <svg class="flag" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
+              <defs><clipPath id="enClipModal"><circle cx="10" cy="10" r="10"/></clipPath></defs>
+              <g clip-path="url(#enClipModal)">
+                <rect width="20" height="20" fill="#00247D"/>
+                <path d="M0 0 L20 20 M20 0 L0 20" stroke="#FFFFFF" stroke-width="4"/>
+                <path d="M0 0 L20 20 M20 0 L0 20" stroke="#CF142B" stroke-width="1.6"/>
+                <path d="M10 0 V20 M0 10 H20" stroke="#FFFFFF" stroke-width="6"/>
+                <path d="M10 0 V20 M0 10 H20" stroke="#CF142B" stroke-width="3.2"/>
+              </g>
+            </svg>
+          </button>
+        </div>
+        <button class="modal-close" id="welcomeClose" data-i18n="modal-close-aria" data-i18n-attr="aria-label" aria-label="Chiudi">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
     </div>
     <div class="modal-body">
-      <p id="welcomeTitle" data-i18n="modal-title">Ehi, ciao 👋</p>
+      <p id="welcomeTitle" class="modal-greet" data-i18n="modal-title"><span class="serif-part">Ehi,</span> ciao 👋</p>
       <p data-i18n="modal-p1">Se sei arrivato fin qui, il mio CV ha fatto il suo lavoro — grazie per esserti fermato a guardare più da vicino.</p>
       <p data-i18n="modal-p2">Una cosa prima di iniziare: questo sito e i progetti al suo interno sono realizzati con l'AI (Claude, per la precisione) — non perché non sia in grado di farlo da solo, ma perché è lo strumento giusto per lavorare meglio e più in fretta. La parte noiosa la fa l'IA. Quella che conta resta mia.</p>
       <p data-i18n="modal-p3">Fatta questa premessa, buona esplorazione.</p>
